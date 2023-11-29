@@ -206,8 +206,8 @@ describe("PriceList Service", () => {
         {
           title: "test",
           description: "test",
-          starts_at: "10/01/2023",
-          ends_at: "10/30/2023",
+          starts_at: new Date("10/01/2023"),
+          ends_at: new Date("10/30/2023"),
           rules: {
             customer_group_id: [
               "vip-customer-group-id",
@@ -229,7 +229,7 @@ describe("PriceList Service", () => {
       await service.updatePriceLists([
         {
           id: created.id,
-          starts_at: updateDate.toISOString(),
+          starts_at: updateDate,
           rules: {
             new_rule: ["new-rule-value"],
           },
@@ -319,8 +319,8 @@ describe("PriceList Service", () => {
         {
           title: "test",
           description: "test",
-          starts_at: "10/01/2023",
-          ends_at: "10/30/2023",
+          starts_at: new Date("10/01/2023"),
+          ends_at: new Date("10/30/2023"),
           rules: {
             customer_group_id: [
               "vip-customer-group-id",
@@ -419,8 +419,8 @@ describe("PriceList Service", () => {
         {
           title: "test",
           description: "test",
-          starts_at: "10/01/2023",
-          ends_at: "10/30/2023",
+          starts_at: new Date("10/01/2023"),
+          ends_at: new Date("10/30/2023"),
           rules: {
             customer_group_id: [
               "vip-customer-group-id",

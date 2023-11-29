@@ -90,8 +90,8 @@ describe("POST /admin/price-lists/:id/prices/batch", () => {
       {
         title: "test price list",
         description: "test",
-        ends_at: new Date().toISOString(),
-        starts_at: new Date().toISOString(),
+        ends_at: new Date(),
+        starts_at: new Date(),
         status: PriceListStatus.ACTIVE,
         type: PriceListType.OVERRIDE,
       },
