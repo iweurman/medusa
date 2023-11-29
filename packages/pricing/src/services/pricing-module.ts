@@ -1412,8 +1412,6 @@ export default class PricingModuleService<
       const {
         rules = {},
         prices = [],
-        starts_at,
-        ends_at,
         ...priceListOnlyData
       } = priceListData
 
@@ -1421,8 +1419,6 @@ export default class PricingModuleService<
         [
           {
             ...priceListOnlyData,
-            starts_at: starts_at ? starts_at.toISOString() : undefined,
-            ends_at: ends_at ? ends_at.toISOString() : undefined,
             number_rules: Object.keys(rules).length,
           },
         ],
@@ -1588,17 +1584,9 @@ export default class PricingModuleService<
     )
 
     for (const priceListData of data) {
-      const { rules, starts_at, ends_at, ...priceListOnlyData } = priceListData
-      const updatePriceListData: any = {
+      const { rules, ...priceListOnlyData } = priceListData
+      const updatePriceListData = {
         ...priceListOnlyData,
-      }
-
-      if (starts_at) {
-        updatePriceListData.starts_at = starts_at!.toISOString()
-      }
-
-      if (ends_at) {
-        updatePriceListData.ends_at = ends_at!.toISOString()
       }
 
       if (typeof rules === "object") {
